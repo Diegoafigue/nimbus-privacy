@@ -3,303 +3,568 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad - Nimbus</title>
+    <title>Privacy Policy / Política de Privacidad — Nimbus</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --blue: #4A90D9;
+            --blue-dark: #2D6BB5;
+            --green: #34C98A;
+            --bg: #F5F7FA;
+            --card: #ffffff;
+            --text: #1a1f2e;
+            --muted: #6b7280;
+            --border: #e8ecf0;
+            --highlight-bg: #EEF4FF;
+            --highlight-border: #4A90D9;
         }
-        
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
             padding: 20px;
         }
-        
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+
+        /* ── Language Toggle ── */
+        .lang-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 28px;
+            gap: 0;
         }
-        
+
+        .lang-btn {
+            padding: 9px 28px;
+            border: 2px solid var(--blue);
+            background: transparent;
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            letter-spacing: 0.5px;
+        }
+
+        .lang-btn:first-child { border-radius: 10px 0 0 10px; }
+        .lang-btn:last-child  { border-radius: 0 10px 10px 0; border-left: none; }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, var(--blue), var(--green));
+            border-color: transparent;
+            color: white;
+        }
+
+        /* ── Container ── */
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* ── Header ── */
         .header {
             text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 2px solid #f0f0f0;
+            background: var(--card);
+            border-radius: 20px;
+            padding: 44px 40px 36px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 20px rgba(74,144,217,0.08);
         }
-        
+
         .logo {
-            font-size: 48px;
-            margin-bottom: 10px;
+            font-size: 52px;
+            margin-bottom: 14px;
+            display: block;
         }
-        
-        h1 {
-            color: #667eea;
-            font-size: 32px;
-            margin-bottom: 10px;
+
+        .header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 6px;
         }
-        
-        .subtitle {
-            color: #666;
+
+        .header .app-name {
+            font-size: 15px;
+            color: var(--blue);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .header .date {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* ── Summary Banner ── */
+        .summary {
+            background: linear-gradient(135deg, var(--blue), var(--green));
+            border-radius: 16px;
+            padding: 22px 28px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .summary strong { font-size: 15px; display: block; margin-bottom: 6px; }
+        .summary p { font-size: 14px; opacity: 0.92; line-height: 1.6; }
+
+        /* ── Section Cards ── */
+        .card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+
+        .card h2 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--blue-dark);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2 .num {
+            background: linear-gradient(135deg, var(--blue), var(--green));
+            color: white;
+            border-radius: 8px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .card h3 {
             font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            margin: 18px 0 10px;
         }
-        
-        h2 {
-            color: #667eea;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 24px;
-        }
-        
-        h3 {
-            color: #764ba2;
-            margin-top: 20px;
+
+        .card p {
+            font-size: 14px;
+            color: #374151;
             margin-bottom: 10px;
+        }
+
+        .card ul {
+            list-style: none;
+            margin: 0 0 10px;
+        }
+
+        .card ul li {
+            font-size: 14px;
+            color: #374151;
+            padding: 5px 0 5px 22px;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: '·';
+            position: absolute;
+            left: 8px;
+            color: var(--blue);
+            font-weight: 700;
             font-size: 18px;
+            line-height: 1.3;
         }
-        
-        p, li {
-            margin-bottom: 12px;
-            color: #333;
-        }
-        
-        ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-        
+
+        .card ul li.check::before { content: '✓'; font-size: 13px; color: var(--green); top: 6px; }
+        .card ul li.cross::before { content: '✕'; font-size: 12px; color: #ef4444; top: 6px; }
+
         .highlight {
-            background: #f8f9ff;
-            padding: 15px;
-            border-left: 4px solid #667eea;
-            margin: 20px 0;
-            border-radius: 5px;
+            background: var(--highlight-bg);
+            border-left: 3px solid var(--highlight-border);
+            border-radius: 0 8px 8px 0;
+            padding: 12px 16px;
+            margin: 14px 0;
+            font-size: 14px;
+            color: #1e3a5f;
         }
-        
-        .contact {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 40px;
+
+        code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-family: 'SF Mono', monospace;
+            color: var(--blue-dark);
+        }
+
+        /* ── Contact Card ── */
+        .contact-card {
+            background: linear-gradient(135deg, #1a2744 0%, #2D6BB5 100%);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 16px;
             text-align: center;
-        }
-        
-        .contact h2 {
             color: white;
-            margin-top: 0;
         }
-        
-        .contact a {
-            color: white;
+
+        .contact-card h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .contact-card p { font-size: 14px; opacity: 0.85; margin-bottom: 8px; }
+
+        .contact-card a {
+            color: #7dd3fc;
             text-decoration: none;
             font-weight: 600;
-            border-bottom: 2px solid rgba(255,255,255,0.5);
-            padding-bottom: 2px;
         }
-        
+
+        /* ── Footer ── */
         .footer {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #f0f0f0;
-            color: #999;
-            font-size: 14px;
+            padding: 24px 0 40px;
+            font-size: 13px;
+            color: var(--muted);
         }
-        
+
+        /* ── Language sections ── */
+        .lang-es, .lang-en { display: none; }
+        .lang-es.visible, .lang-en.visible { display: block; }
+
         @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-            
-            h1 {
-                font-size: 24px;
-            }
-            
-            h2 {
-                font-size: 20px;
-            }
+            .card { padding: 22px 20px; }
+            .header { padding: 32px 24px 28px; }
+            .header h1 { font-size: 22px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">☁️</div>
-            <h1>Política de Privacidad</h1>
-            <div class="subtitle">Nimbus - Finanzas Personales</div>
-            <div class="subtitle" style="margin-top: 5px;">Última actualización: 16 de febrero de 2026</div>
-        </div>
 
-        <div class="highlight">
-            <strong>En resumen:</strong> Nimbus almacena TODOS tus datos financieros localmente en tu dispositivo. No recopilamos, no compartimos, y no tenemos acceso a tu información personal o financiera.
-        </div>
+<div class="container">
 
-        <h2>1. Información General</h2>
-        <p>
-            Nimbus ("nosotros", "nuestro" o "la aplicación") es una aplicación de finanzas personales desarrollada por Diego Figueroa. Esta Política de Privacidad describe cómo manejamos tu información cuando usas nuestra aplicación móvil para iOS.
-        </p>
-
-        <h2>2. Datos que Recopilamos</h2>
-        
-        <h3>2.1 Datos Financieros (Almacenados Localmente)</h3>
-        <p>Nimbus te permite registrar y gestionar:</p>
-        <ul>
-            <li><strong>Transacciones:</strong> Monto, fecha, categoría, notas personales</li>
-            <li><strong>Cuentas bancarias:</strong> Nombre personalizado, balance, tipo de cuenta</li>
-            <li><strong>Presupuestos:</strong> Metas financieras, límites de gasto</li>
-            <li><strong>Metas de ahorro:</strong> Objetivos y progreso</li>
-        </ul>
-        <p class="highlight">
-            <strong>Importante:</strong> Nimbus NO recopila números de cuenta bancaria reales, contraseñas, tarjetas de crédito, ni conexiones directas con instituciones financieras.
-        </p>
-
-        <h3>2.2 Datos de Ubicación (Opcional)</h3>
-        <ul>
-            <li><strong>Cuándo:</strong> Solo cuando tú agregas manualmente una transacción y eliges activar la ubicación GPS</li>
-            <li><strong>Permiso requerido:</strong> Debes otorgar permiso explícito en iOS</li>
-            <li><strong>Uso:</strong> La ubicación se asocia SOLO a esa transacción específica para tu referencia personal</li>
-            <li><strong>No se usa en segundo plano:</strong> Nunca rastreamos tu ubicación cuando la app está cerrada</li>
-        </ul>
-
-        <h3>2.3 Datos de Configuración</h3>
-        <ul>
-            <li>Preferencias de idioma (español/inglés)</li>
-            <li>Moneda preferida</li>
-            <li>Tema de apariencia (claro/oscuro)</li>
-            <li>PIN de seguridad (cifrado en Keychain de iOS)</li>
-        </ul>
-
-        <h3>2.4 Datos que NO Recopilamos</h3>
-        <ul>
-            <li>❌ Información personal identificable (nombre, email, teléfono)</li>
-            <li>❌ Datos biométricos (Face ID/Touch ID se procesan localmente por iOS)</li>
-            <li>❌ Historial de navegación</li>
-            <li>❌ Contactos o fotos</li>
-            <li>❌ Números de cuenta bancaria o tarjetas de crédito reales</li>
-        </ul>
-
-        <h2>3. Cómo Usamos tus Datos</h2>
-        <p>Todos los datos se procesan <strong>localmente en tu dispositivo</strong> para:</p>
-        <ul>
-            <li>Gestionar tus finanzas personales</li>
-            <li>Generar estadísticas y gráficos de tus hábitos financieros</li>
-            <li>Configurar recordatorios de pagos programados</li>
-            <li>Exportar tus datos en formato CSV o PDF (a tu solicitud)</li>
-        </ul>
-
-        <h2>4. Almacenamiento y Seguridad</h2>
-        
-        <h3>4.1 Almacenamiento Local</h3>
-        <p>
-            Nimbus utiliza <strong>Core Data</strong> de Apple para almacenar todos tus datos financieros exclusivamente en tu dispositivo iOS. Estos datos:
-        </p>
-        <ul>
-            <li>✅ Permanecen en tu dispositivo</li>
-            <li>✅ NO se sincronizan con servidores externos</li>
-            <li>✅ NO se comparten con terceros</li>
-            <li>✅ Se eliminan por completo al desinstalar la app</li>
-        </ul>
-
-        <h3>4.2 Seguridad</h3>
-        <ul>
-            <li><strong>PIN/Biometría:</strong> Tu PIN se almacena cifrado en el Keychain de iOS</li>
-            <li><strong>Face ID/Touch ID:</strong> Procesado completamente por iOS, nunca accedemos a datos biométricos</li>
-            <li><strong>Pantalla de privacidad:</strong> Ocultamos contenido sensible cuando cambias de app</li>
-        </ul>
-
-        <h2>5. Compartir con Terceros</h2>
-        <p class="highlight">
-            <strong>Nimbus NO comparte tus datos con terceros.</strong> No hay analytics, publicidad, ni SDKs de seguimiento.
-        </p>
-
-        <h3>5.1 API de Tipos de Cambio</h3>
-        <p>
-            Nimbus consulta una API pública (<code>open.er-api.com</code>) para obtener tipos de cambio actualizados. Esta consulta:
-        </p>
-        <ul>
-            <li>✅ NO incluye datos personales o financieros</li>
-            <li>✅ Solo solicita tasas de cambio públicas (como consultar el clima)</li>
-            <li>✅ No requiere identificación ni registro</li>
-        </ul>
-
-        <h2>6. Sincronización en la Nube</h2>
-        <p>
-            <strong>Actualmente, Nimbus NO sincroniza datos en la nube.</strong> Todos tus datos permanecen exclusivamente en tu dispositivo.
-        </p>
-        <p>
-            En futuras versiones, podríamos ofrecer sincronización opcional con iCloud. Si implementamos esta función:
-        </p>
-        <ul>
-            <li>Requerirá tu <strong>consentimiento explícito</strong></li>
-            <li>Actualizaremos esta política de privacidad</li>
-            <li>Te notificaremos antes de activar cualquier sincronización</li>
-        </ul>
-
-        <h2>7. Tus Derechos</h2>
-        <p>Como usuario de Nimbus, tienes derecho a:</p>
-        <ul>
-            <li><strong>Acceder:</strong> Todos tus datos están disponibles en la app</li>
-            <li><strong>Exportar:</strong> Puedes exportar tus datos en CSV o PDF en cualquier momento</li>
-            <li><strong>Eliminar:</strong> Puedes borrar transacciones, cuentas o toda la información desde Ajustes</li>
-            <li><strong>Revocar permisos:</strong> Puedes desactivar el acceso a ubicación en Ajustes de iOS</li>
-        </ul>
-
-        <h2>8. Retención de Datos</h2>
-        <ul>
-            <li>Tus datos permanecen en tu dispositivo <strong>hasta que los elimines manualmente</strong></li>
-            <li>Al desinstalar Nimbus, <strong>todos los datos se eliminan permanentemente</strong></li>
-            <li>No tenemos copias de respaldo externas de tu información</li>
-        </ul>
-
-        <h2>9. Privacidad de Menores</h2>
-        <p>
-            Nimbus no recopila intencionalmente información de menores de 13 años. Si eres padre/tutor y descubres que tu hijo ha proporcionado información, contáctanos para eliminarla.
-        </p>
-
-        <h2>10. Cambios a esta Política</h2>
-        <p>
-            Podemos actualizar esta Política de Privacidad ocasionalmente. Te notificaremos sobre cambios significativos mediante:
-        </p>
-        <ul>
-            <li>Una notificación en la app</li>
-            <li>Actualización de la fecha "Última actualización" arriba</li>
-        </ul>
-        <p>
-            Tu uso continuado de Nimbus después de los cambios constituye tu aceptación de la política actualizada.
-        </p>
-
-        <h2>11. Cumplimiento Legal</h2>
-        <p>
-            Esta política cumple con:
-        </p>
-        <ul>
-            <li><strong>Apple App Store Review Guidelines</strong> (Sección 5.1.1)</li>
-            <li><strong>GDPR</strong> (Reglamento General de Protección de Datos - UE)</li>
-            <li><strong>CCPA</strong> (California Consumer Privacy Act - USA)</li>
-            <li><strong>LFPDPPP</strong> (Ley Federal de Protección de Datos - México)</li>
-        </ul>
-
-        <div class="contact">
-            <h2>12. Contacto</h2>
-            <p>Si tienes preguntas sobre esta Política de Privacidad o sobre cómo manejamos tus datos, contáctanos:</p>
-            <p style="margin-top: 20px;">
-                <strong>Email:</strong> <a href="mailto:nimbusfinapp@gmail.com">nimbusfinapp@gmail.com</a><br>
-                <strong>Desarrollador:</strong> Diego Figueroa
-            </p>
-        </div>
-
-        <div class="footer">
-            <p>© 2026 Nimbus - Finanzas Personales. Todos los derechos reservados.</p>
-            <p style="margin-top: 10px;">Desarrollado con ❤️ para ayudarte a gestionar tus finanzas de forma privada y segura.</p>
-        </div>
+    <!-- Language Toggle -->
+    <div class="lang-bar">
+        <button class="lang-btn active" onclick="setLang('es')" id="btn-es">🇲🇽 Español</button>
+        <button class="lang-btn" onclick="setLang('en')" id="btn-en">🇺🇸 English</button>
     </div>
+
+    <!-- ═══════════════════ ESPAÑOL ═══════════════════ -->
+    <div class="lang-es visible" id="content-es">
+
+        <div class="header">
+            <span class="logo">☁️</span>
+            <h1>Política de Privacidad</h1>
+            <div class="app-name">Nimbus — Finanzas Personales</div>
+            <div class="date">Última actualización: 28 de febrero de 2026</div>
+        </div>
+
+        <div class="summary">
+            <strong>En resumen:</strong>
+            <p>Nimbus almacena TODOS tus datos financieros localmente en tu dispositivo. No recopilamos, no compartimos, y no tenemos acceso a tu información personal o financiera.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">1</span>Información General</h2>
+            <p>Nimbus es una aplicación de finanzas personales desarrollada por Diego Figueroa. Esta Política de Privacidad describe cómo manejamos tu información cuando usas nuestra aplicación móvil para iOS.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">2</span>Datos que Recopilamos</h2>
+
+            <h3>2.1 Datos Financieros (Almacenados Localmente)</h3>
+            <p>Nimbus te permite registrar y gestionar:</p>
+            <ul>
+                <li><strong>Transacciones:</strong> monto, fecha, categoría, notas personales</li>
+                <li><strong>Cuentas:</strong> nombre personalizado, balance, tipo de cuenta</li>
+                <li><strong>Presupuestos:</strong> metas financieras, límites de gasto</li>
+                <li><strong>Metas de ahorro:</strong> objetivos y progreso</li>
+            </ul>
+            <div class="highlight"><strong>Importante:</strong> Nimbus NO recopila números de cuenta bancaria reales, contraseñas, tarjetas de crédito, ni conexiones directas con instituciones financieras.</div>
+
+            <h3>2.2 Datos de Ubicación (Opcional)</h3>
+            <ul>
+                <li>Solo cuando tú eliges activar la ubicación GPS al agregar una transacción</li>
+                <li>Requiere permiso explícito en iOS</li>
+                <li>La ubicación se asocia únicamente a esa transacción para tu referencia personal</li>
+                <li>Nunca rastreamos tu ubicación en segundo plano</li>
+            </ul>
+
+            <h3>2.3 Datos de Configuración</h3>
+            <ul>
+                <li>Preferencias de idioma (español/inglés)</li>
+                <li>Moneda preferida</li>
+                <li>Tema de apariencia (claro/oscuro)</li>
+                <li>PIN de seguridad (cifrado en Keychain de iOS)</li>
+            </ul>
+
+            <h3>2.4 Datos que NO Recopilamos</h3>
+            <ul>
+                <li class="cross">Información personal identificable (nombre, email, teléfono)</li>
+                <li class="cross">Datos biométricos (Face ID/Touch ID se procesan localmente por iOS)</li>
+                <li class="cross">Historial de navegación</li>
+                <li class="cross">Contactos o fotos</li>
+                <li class="cross">Números de cuenta bancaria o tarjetas de crédito reales</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">3</span>Cómo Usamos tus Datos</h2>
+            <p>Todos los datos se procesan <strong>localmente en tu dispositivo</strong> para:</p>
+            <ul>
+                <li>Gestionar tus finanzas personales</li>
+                <li>Generar estadísticas y gráficos de tus hábitos financieros</li>
+                <li>Configurar recordatorios de pagos programados</li>
+                <li>Exportar tus datos en formato CSV o PDF a tu solicitud</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">4</span>Almacenamiento y Seguridad</h2>
+
+            <h3>4.1 Almacenamiento Local</h3>
+            <p>Nimbus usa <strong>Core Data</strong> de Apple para almacenar todos tus datos exclusivamente en tu dispositivo iOS:</p>
+            <ul>
+                <li class="check">Permanecen en tu dispositivo</li>
+                <li class="check">NO se sincronizan con servidores externos</li>
+                <li class="check">NO se comparten con terceros</li>
+                <li class="check">Se eliminan por completo al desinstalar la app</li>
+            </ul>
+
+            <h3>4.2 Seguridad</h3>
+            <ul>
+                <li><strong>PIN/Biometría:</strong> tu PIN se almacena cifrado en el Keychain de iOS</li>
+                <li><strong>Face ID/Touch ID:</strong> procesado completamente por iOS, nunca accedemos a datos biométricos</li>
+                <li><strong>Pantalla de privacidad:</strong> ocultamos el contenido cuando cambias de app</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">5</span>Compartir con Terceros</h2>
+            <div class="highlight"><strong>Nimbus NO comparte tus datos con terceros.</strong> No hay analytics, publicidad, ni SDKs de seguimiento.</div>
+
+            <h3>5.1 API de Tipos de Cambio</h3>
+            <p>Nimbus consulta <code>open.er-api.com</code> para obtener tipos de cambio actualizados. Esta consulta:</p>
+            <ul>
+                <li class="check">NO incluye datos personales o financieros</li>
+                <li class="check">Solo solicita tasas de cambio públicas</li>
+                <li class="check">No requiere identificación ni registro</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">6</span>Sincronización en la Nube</h2>
+            <p><strong>Actualmente, Nimbus NO sincroniza datos en la nube.</strong> Todos tus datos permanecen en tu dispositivo.</p>
+            <p>En futuras versiones podríamos ofrecer sincronización opcional con iCloud. Si implementamos esta función, requerirá tu consentimiento explícito y actualizaremos esta política.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">7</span>Tus Derechos</h2>
+            <ul>
+                <li><strong>Acceder:</strong> todos tus datos están disponibles en la app</li>
+                <li><strong>Exportar:</strong> puedes exportar en CSV o PDF en cualquier momento</li>
+                <li><strong>Eliminar:</strong> puedes borrar transacciones, cuentas o toda la información desde Ajustes</li>
+                <li><strong>Revocar permisos:</strong> puedes desactivar el acceso a ubicación en Ajustes de iOS</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">8</span>Privacidad de Menores</h2>
+            <p>Nimbus no recopila intencionalmente información de menores de 13 años. Si eres padre/tutor y descubres que tu hijo ha proporcionado información, contáctanos para eliminarla.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">9</span>Cumplimiento Legal</h2>
+            <ul>
+                <li class="check">Apple App Store Review Guidelines (Sección 5.1.1)</li>
+                <li class="check">GDPR — Reglamento General de Protección de Datos (UE)</li>
+                <li class="check">CCPA — California Consumer Privacy Act (USA)</li>
+                <li class="check">LFPDPPP — Ley Federal de Protección de Datos (México)</li>
+            </ul>
+        </div>
+
+        <div class="contact-card">
+            <h2>Contacto</h2>
+            <p>¿Preguntas sobre esta política?</p>
+            <p><strong>Email:</strong> <a href="mailto:nimbusfinapp@gmail.com">nimbusfinapp@gmail.com</a></p>
+            <p><strong>Desarrollador:</strong> Diego Figueroa</p>
+        </div>
+
+    </div><!-- /lang-es -->
+
+    <!-- ═══════════════════ ENGLISH ═══════════════════ -->
+    <div class="lang-en" id="content-en">
+
+        <div class="header">
+            <span class="logo">☁️</span>
+            <h1>Privacy Policy</h1>
+            <div class="app-name">Nimbus — Personal Finance</div>
+            <div class="date">Last updated: February 28, 2026</div>
+        </div>
+
+        <div class="summary">
+            <strong>In short:</strong>
+            <p>Nimbus stores ALL your financial data locally on your device. We do not collect, share, or have access to your personal or financial information.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">1</span>General Information</h2>
+            <p>Nimbus is a personal finance app developed by Diego Figueroa. This Privacy Policy describes how we handle your information when you use our iOS mobile application.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">2</span>Data We Collect</h2>
+
+            <h3>2.1 Financial Data (Stored Locally)</h3>
+            <p>Nimbus lets you record and manage:</p>
+            <ul>
+                <li><strong>Transactions:</strong> amount, date, category, personal notes</li>
+                <li><strong>Accounts:</strong> custom name, balance, account type</li>
+                <li><strong>Budgets:</strong> financial goals, spending limits</li>
+                <li><strong>Savings goals:</strong> targets and progress</li>
+            </ul>
+            <div class="highlight"><strong>Important:</strong> Nimbus does NOT collect real bank account numbers, passwords, credit cards, or direct connections to financial institutions.</div>
+
+            <h3>2.2 Location Data (Optional)</h3>
+            <ul>
+                <li>Only when you choose to enable GPS location when adding a transaction</li>
+                <li>Requires explicit permission in iOS</li>
+                <li>Location is associated only with that specific transaction for your personal reference</li>
+                <li>We never track your location in the background</li>
+            </ul>
+
+            <h3>2.3 Configuration Data</h3>
+            <ul>
+                <li>Language preferences (Spanish/English)</li>
+                <li>Preferred currency</li>
+                <li>Appearance theme (light/dark)</li>
+                <li>Security PIN (encrypted in iOS Keychain)</li>
+            </ul>
+
+            <h3>2.4 Data We Do NOT Collect</h3>
+            <ul>
+                <li class="cross">Personally identifiable information (name, email, phone)</li>
+                <li class="cross">Biometric data (Face ID/Touch ID are processed locally by iOS)</li>
+                <li class="cross">Browsing history</li>
+                <li class="cross">Contacts or photos</li>
+                <li class="cross">Real bank account numbers or credit cards</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">3</span>How We Use Your Data</h2>
+            <p>All data is processed <strong>locally on your device</strong> to:</p>
+            <ul>
+                <li>Manage your personal finances</li>
+                <li>Generate statistics and charts of your financial habits</li>
+                <li>Set reminders for scheduled payments</li>
+                <li>Export your data in CSV or PDF format upon request</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">4</span>Storage and Security</h2>
+
+            <h3>4.1 Local Storage</h3>
+            <p>Nimbus uses Apple's <strong>Core Data</strong> to store all your data exclusively on your iOS device:</p>
+            <ul>
+                <li class="check">Stays on your device</li>
+                <li class="check">NOT synced to external servers</li>
+                <li class="check">NOT shared with third parties</li>
+                <li class="check">Completely deleted when you uninstall the app</li>
+            </ul>
+
+            <h3>4.2 Security</h3>
+            <ul>
+                <li><strong>PIN/Biometrics:</strong> your PIN is stored encrypted in iOS Keychain</li>
+                <li><strong>Face ID/Touch ID:</strong> processed entirely by iOS — we never access biometric data</li>
+                <li><strong>Privacy screen:</strong> we hide sensitive content when you switch apps</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">5</span>Third-Party Sharing</h2>
+            <div class="highlight"><strong>Nimbus does NOT share your data with third parties.</strong> No analytics, advertising, or tracking SDKs.</div>
+
+            <h3>5.1 Exchange Rate API</h3>
+            <p>Nimbus queries <code>open.er-api.com</code> to fetch updated exchange rates. This request:</p>
+            <ul>
+                <li class="check">Does NOT include personal or financial data</li>
+                <li class="check">Only requests public exchange rates</li>
+                <li class="check">Requires no identification or registration</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">6</span>Cloud Synchronization</h2>
+            <p><strong>Nimbus does NOT currently sync data to the cloud.</strong> All your data remains exclusively on your device.</p>
+            <p>In future versions, we may offer optional iCloud sync. If implemented, it will require your explicit consent and we will update this policy accordingly.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">7</span>Your Rights</h2>
+            <ul>
+                <li><strong>Access:</strong> all your data is available within the app</li>
+                <li><strong>Export:</strong> you can export to CSV or PDF at any time</li>
+                <li><strong>Delete:</strong> you can delete transactions, accounts, or all data from Settings</li>
+                <li><strong>Revoke permissions:</strong> you can disable location access in iOS Settings</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">8</span>Children's Privacy</h2>
+            <p>Nimbus does not intentionally collect information from children under 13. If you are a parent or guardian and discover your child has provided information, please contact us for removal.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="num">9</span>Legal Compliance</h2>
+            <ul>
+                <li class="check">Apple App Store Review Guidelines (Section 5.1.1)</li>
+                <li class="check">GDPR — General Data Protection Regulation (EU)</li>
+                <li class="check">CCPA — California Consumer Privacy Act (USA)</li>
+                <li class="check">LFPDPPP — Federal Data Protection Law (Mexico)</li>
+            </ul>
+        </div>
+
+        <div class="contact-card">
+            <h2>Contact</h2>
+            <p>Questions about this policy?</p>
+            <p><strong>Email:</strong> <a href="mailto:nimbusfinapp@gmail.com">nimbusfinapp@gmail.com</a></p>
+            <p><strong>Developer:</strong> Diego Figueroa</p>
+        </div>
+
+    </div><!-- /lang-en -->
+
+    <div class="footer">
+        <p>© 2026 Nimbus — Personal Finance. All rights reserved.</p>
+    </div>
+
+</div>
+
+<script>
+    function setLang(lang) {
+        // Contenido
+        document.getElementById('content-es').classList.toggle('visible', lang === 'es');
+        document.getElementById('content-en').classList.toggle('visible', lang === 'en');
+        // Botones
+        document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        // html lang attr
+        document.documentElement.lang = lang === 'es' ? 'es' : 'en';
+    }
+
+    // Auto-detectar idioma del navegador
+    const browserLang = navigator.language || navigator.userLanguage || 'es';
+    if (!browserLang.startsWith('es')) {
+        setLang('en');
+    }
+</script>
+
 </body>
 </html>
