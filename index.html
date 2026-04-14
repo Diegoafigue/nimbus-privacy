@@ -28,7 +28,6 @@
             padding: 20px;
         }
 
-        /* ── Language Toggle ── */
         .lang-bar {
             display: flex;
             justify-content: center;
@@ -57,13 +56,11 @@
             color: white;
         }
 
-        /* ── Container ── */
         .container {
             max-width: 760px;
             margin: 0 auto;
         }
 
-        /* ── Header ── */
         .header {
             text-align: center;
             background: var(--card);
@@ -74,32 +71,11 @@
             box-shadow: 0 4px 20px rgba(74,144,217,0.08);
         }
 
-        .logo {
-            font-size: 52px;
-            margin-bottom: 14px;
-            display: block;
-        }
+        .logo { font-size: 52px; margin-bottom: 14px; display: block; }
+        .header h1 { font-size: 26px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+        .header .app-name { font-size: 15px; color: var(--blue); font-weight: 600; margin-bottom: 8px; }
+        .header .date { font-size: 13px; color: var(--muted); }
 
-        .header h1 {
-            font-size: 26px;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 6px;
-        }
-
-        .header .app-name {
-            font-size: 15px;
-            color: var(--blue);
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .header .date {
-            font-size: 13px;
-            color: var(--muted);
-        }
-
-        /* ── Summary Banner ── */
         .summary {
             background: linear-gradient(135deg, var(--blue), var(--green));
             border-radius: 16px;
@@ -111,7 +87,6 @@
         .summary strong { font-size: 15px; display: block; margin-bottom: 6px; }
         .summary p { font-size: 14px; opacity: 0.92; line-height: 1.6; }
 
-        /* ── Section Cards ── */
         .card {
             background: var(--card);
             border-radius: 16px;
@@ -145,23 +120,9 @@
             flex-shrink: 0;
         }
 
-        .card h3 {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text);
-            margin: 18px 0 10px;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: #374151;
-            margin-bottom: 10px;
-        }
-
-        .card ul {
-            list-style: none;
-            margin: 0 0 10px;
-        }
+        .card h3 { font-size: 14px; font-weight: 600; color: var(--text); margin: 18px 0 10px; }
+        .card p { font-size: 14px; color: #374151; margin-bottom: 10px; }
+        .card ul { list-style: none; margin: 0 0 10px; }
 
         .card ul li {
             font-size: 14px;
@@ -202,7 +163,6 @@
             color: var(--blue-dark);
         }
 
-        /* ── Contact Card ── */
         .contact-card {
             background: linear-gradient(135deg, #1a2744 0%, #2D6BB5 100%);
             border-radius: 16px;
@@ -212,29 +172,12 @@
             color: white;
         }
 
-        .contact-card h2 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
+        .contact-card h2 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
         .contact-card p { font-size: 14px; opacity: 0.85; margin-bottom: 8px; }
+        .contact-card a { color: #7dd3fc; text-decoration: none; font-weight: 600; }
 
-        .contact-card a {
-            color: #7dd3fc;
-            text-decoration: none;
-            font-weight: 600;
-        }
+        .footer { text-align: center; padding: 24px 0 40px; font-size: 13px; color: var(--muted); }
 
-        /* ── Footer ── */
-        .footer {
-            text-align: center;
-            padding: 24px 0 40px;
-            font-size: 13px;
-            color: var(--muted);
-        }
-
-        /* ── Language sections ── */
         .lang-es, .lang-en { display: none; }
         .lang-es.visible, .lang-en.visible { display: block; }
 
@@ -249,7 +192,6 @@
 
 <div class="container">
 
-    <!-- Language Toggle -->
     <div class="lang-bar">
         <button class="lang-btn active" onclick="setLang('es')" id="btn-es">🇲🇽 Español</button>
         <button class="lang-btn" onclick="setLang('en')" id="btn-en">🇺🇸 English</button>
@@ -262,12 +204,12 @@
             <span class="logo">☁️</span>
             <h1>Política de Privacidad</h1>
             <div class="app-name">Nimbus — Finanzas Personales</div>
-            <div class="date">Última actualización: 28 de febrero de 2026</div>
+            <div class="date">Última actualización: 13 de abril de 2026</div>
         </div>
 
         <div class="summary">
             <strong>En resumen:</strong>
-            <p>Nimbus almacena TODOS tus datos financieros localmente en tu dispositivo. No recopilamos, no compartimos, y no tenemos acceso a tu información personal o financiera.</p>
+            <p>Nimbus almacena TODOS tus datos financieros localmente en tu dispositivo y, de forma opcional, los sincroniza a través de tu iCloud privado. No recopilamos, no compartimos, y no tenemos acceso a tu información personal o financiera.</p>
         </div>
 
         <div class="card">
@@ -328,13 +270,14 @@
         <div class="card">
             <h2><span class="num">4</span>Almacenamiento y Seguridad</h2>
 
-            <h3>4.1 Almacenamiento Local</h3>
-            <p>Nimbus usa <strong>Core Data</strong> de Apple para almacenar todos tus datos exclusivamente en tu dispositivo iOS:</p>
+            <h3>4.1 Almacenamiento Local y Sincronización</h3>
+            <p>Nimbus usa <strong>Core Data</strong> de Apple para almacenar todos tus datos en tu dispositivo iOS. Adicionalmente, si tienes iCloud habilitado, tus datos se sincronizan automáticamente a través de <strong>CloudKit</strong> (el servicio de nube privada de Apple):</p>
             <ul>
-                <li class="check">Permanecen en tu dispositivo</li>
-                <li class="check">NO se sincronizan con servidores externos</li>
+                <li class="check">Permanecen en tu dispositivo y en tu iCloud privado</li>
+                <li class="check">NO se sincronizan con servidores propios de Nimbus</li>
                 <li class="check">NO se comparten con terceros</li>
-                <li class="check">Se eliminan por completo al desinstalar la app</li>
+                <li class="check">Puedes desactivar la sincronización en Ajustes de iOS → [Tu nombre] → iCloud → Nimbus</li>
+                <li class="check">Se eliminan de tu dispositivo al desinstalar la app</li>
             </ul>
 
             <h3>4.2 Seguridad</h3>
@@ -359,9 +302,15 @@
         </div>
 
         <div class="card">
-            <h2><span class="num">6</span>Sincronización en la Nube</h2>
-            <p><strong>Actualmente, Nimbus NO sincroniza datos en la nube.</strong> Todos tus datos permanecen en tu dispositivo.</p>
-            <p>En futuras versiones podríamos ofrecer sincronización opcional con iCloud. Si implementamos esta función, requerirá tu consentimiento explícito y actualizaremos esta política.</p>
+            <h2><span class="num">6</span>Sincronización con iCloud</h2>
+            <p>A partir de la versión 1.3, Nimbus utiliza <strong>iCloud</strong> (CloudKit de Apple) para sincronizar tus datos automáticamente entre todos tus dispositivos que compartan el mismo Apple ID.</p>
+            <ul>
+                <li class="check">La sincronización es completamente privada — tus datos se almacenan en tu iCloud personal</li>
+                <li class="check">Ni nosotros ni Apple tenemos acceso a tus datos financieros</li>
+                <li class="check">La sincronización solo ocurre si tienes iCloud activo en tu dispositivo</li>
+                <li class="check">Puedes desactivarla en cualquier momento: Ajustes de iOS → [Tu nombre] → iCloud → Nimbus</li>
+            </ul>
+            <div class="highlight">Si desactivas iCloud para Nimbus, tus datos seguirán disponibles localmente en tu dispositivo sin ningún cambio.</div>
         </div>
 
         <div class="card">
@@ -370,7 +319,7 @@
                 <li><strong>Acceder:</strong> todos tus datos están disponibles en la app</li>
                 <li><strong>Exportar:</strong> puedes exportar en CSV o PDF en cualquier momento</li>
                 <li><strong>Eliminar:</strong> puedes borrar transacciones, cuentas o toda la información desde Ajustes</li>
-                <li><strong>Revocar permisos:</strong> puedes desactivar el acceso a ubicación en Ajustes de iOS</li>
+                <li><strong>Revocar permisos:</strong> puedes desactivar el acceso a ubicación o iCloud en Ajustes de iOS</li>
             </ul>
         </div>
 
@@ -405,12 +354,12 @@
             <span class="logo">☁️</span>
             <h1>Privacy Policy</h1>
             <div class="app-name">Nimbus — Personal Finance</div>
-            <div class="date">Last updated: February 28, 2026</div>
+            <div class="date">Last updated: April 13, 2026</div>
         </div>
 
         <div class="summary">
             <strong>In short:</strong>
-            <p>Nimbus stores ALL your financial data locally on your device. We do not collect, share, or have access to your personal or financial information.</p>
+            <p>Nimbus stores ALL your financial data locally on your device and, optionally, syncs it through your private iCloud. We do not collect, share, or have access to your personal or financial information.</p>
         </div>
 
         <div class="card">
@@ -471,13 +420,14 @@
         <div class="card">
             <h2><span class="num">4</span>Storage and Security</h2>
 
-            <h3>4.1 Local Storage</h3>
-            <p>Nimbus uses Apple's <strong>Core Data</strong> to store all your data exclusively on your iOS device:</p>
+            <h3>4.1 Local Storage and Sync</h3>
+            <p>Nimbus uses Apple's <strong>Core Data</strong> to store all your data on your iOS device. Additionally, if you have iCloud enabled, your data is automatically synced through <strong>CloudKit</strong> (Apple's private cloud service):</p>
             <ul>
-                <li class="check">Stays on your device</li>
-                <li class="check">NOT synced to external servers</li>
+                <li class="check">Stays on your device and in your private iCloud</li>
+                <li class="check">NOT synced to Nimbus-owned servers</li>
                 <li class="check">NOT shared with third parties</li>
-                <li class="check">Completely deleted when you uninstall the app</li>
+                <li class="check">You can disable sync in iOS Settings → [Your name] → iCloud → Nimbus</li>
+                <li class="check">Completely deleted from your device when you uninstall the app</li>
             </ul>
 
             <h3>4.2 Security</h3>
@@ -502,9 +452,15 @@
         </div>
 
         <div class="card">
-            <h2><span class="num">6</span>Cloud Synchronization</h2>
-            <p><strong>Nimbus does NOT currently sync data to the cloud.</strong> All your data remains exclusively on your device.</p>
-            <p>In future versions, we may offer optional iCloud sync. If implemented, it will require your explicit consent and we will update this policy accordingly.</p>
+            <h2><span class="num">6</span>iCloud Synchronization</h2>
+            <p>Starting with version 1.3, Nimbus uses <strong>iCloud</strong> (Apple's CloudKit) to automatically sync your data across all devices sharing the same Apple ID.</p>
+            <ul>
+                <li class="check">Sync is completely private — your data is stored in your personal iCloud</li>
+                <li class="check">Neither we nor Apple have access to your financial data</li>
+                <li class="check">Sync only occurs if you have iCloud enabled on your device</li>
+                <li class="check">You can disable it at any time: iOS Settings → [Your name] → iCloud → Nimbus</li>
+            </ul>
+            <div class="highlight">If you disable iCloud for Nimbus, your data will remain available locally on your device without any changes.</div>
         </div>
 
         <div class="card">
@@ -513,7 +469,7 @@
                 <li><strong>Access:</strong> all your data is available within the app</li>
                 <li><strong>Export:</strong> you can export to CSV or PDF at any time</li>
                 <li><strong>Delete:</strong> you can delete transactions, accounts, or all data from Settings</li>
-                <li><strong>Revoke permissions:</strong> you can disable location access in iOS Settings</li>
+                <li><strong>Revoke permissions:</strong> you can disable location or iCloud access in iOS Settings</li>
             </ul>
         </div>
 
@@ -549,17 +505,13 @@
 
 <script>
     function setLang(lang) {
-        // Contenido
         document.getElementById('content-es').classList.toggle('visible', lang === 'es');
         document.getElementById('content-en').classList.toggle('visible', lang === 'en');
-        // Botones
         document.getElementById('btn-es').classList.toggle('active', lang === 'es');
         document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-        // html lang attr
         document.documentElement.lang = lang === 'es' ? 'es' : 'en';
     }
 
-    // Auto-detectar idioma del navegador
     const browserLang = navigator.language || navigator.userLanguage || 'es';
     if (!browserLang.startsWith('es')) {
         setLang('en');
