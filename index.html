@@ -28,6 +28,36 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
+        .lang-switch {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .lang-switch button {
+            font: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 999px;
+            border: 1px solid #667eea;
+            background: white;
+            color: #667eea;
+            cursor: pointer;
+        }
+
+        .lang-switch button[aria-pressed="true"] {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Solo se muestra el idioma activo (español por defecto, también sin JavaScript) */
+        html[lang="es"] [lang="en"],
+        html[lang="en"] [lang="es"] {
+            display: none;
+        }
+
         .header {
             text-align: center;
             margin-bottom: 40px;
@@ -75,6 +105,10 @@
             margin-bottom: 15px;
         }
 
+        a {
+            color: #667eea;
+        }
+
         .highlight {
             background: #f8f9ff;
             padding: 15px;
@@ -92,7 +126,8 @@
             text-align: center;
         }
 
-        .contact h2 {
+        .contact h2,
+        .contact p {
             color: white;
             margin-top: 0;
         }
@@ -114,9 +149,18 @@
             font-size: 14px;
         }
 
+        .footer p {
+            color: #999;
+        }
+
         @media (max-width: 600px) {
+            body {
+                padding: 16px;
+            }
+
             .container {
                 padding: 20px;
+                margin: 16px auto;
             }
 
             h1 {
@@ -131,212 +175,457 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <div class="logo">☁️</div>
-            <h1>Política de Privacidad</h1>
-            <div class="subtitle">Nimbus - Finanzas Personales</div>
-            <div class="subtitle" style="margin-top: 5px;">Última actualización: 17 de agosto de 2026</div>
+        <div class="lang-switch">
+            <button type="button" data-set-lang="es" aria-pressed="true">Español</button>
+            <button type="button" data-set-lang="en" aria-pressed="false">English</button>
         </div>
 
-        <div class="highlight">
-            <strong>En resumen:</strong> Nimbus almacena TODOS tus datos financieros localmente en tu dispositivo. No recopilamos, no compartimos, y no tenemos acceso a tu información personal o financiera.
-        </div>
+        <!-- ============================== ESPAÑOL ============================== -->
+        <div lang="es">
+            <div class="header">
+                <div class="logo">☁️</div>
+                <h1>Política de Privacidad</h1>
+                <div class="subtitle">Nimbus - Finanzas Personales</div>
+                <div class="subtitle" style="margin-top: 5px;">Última actualización: 26 de septiembre de 2026</div>
+            </div>
 
-        <h2>1. Información General</h2>
-        <p>
-            Nimbus ("nosotros", "nuestro" o "la aplicación") es una aplicación de finanzas personales desarrollada por Diego Figueroa. Esta Política de Privacidad describe cómo manejamos tu información cuando usas nuestra aplicación móvil para iOS.
-        </p>
+            <div class="highlight">
+                <strong>En resumen:</strong> Nimbus guarda tus datos financieros en tu dispositivo y, solo si activas la sincronización, en tu cuenta privada de iCloud. No tenemos servidores, no recopilamos tu información y no la compartimos con nadie.
+            </div>
 
-        <h2>2. Datos que Recopilamos</h2>
-
-        <h3>2.1 Datos Financieros (Almacenados Localmente)</h3>
-        <p>Nimbus te permite registrar y gestionar:</p>
-        <ul>
-            <li><strong>Transacciones:</strong> Monto, fecha, categoría, notas personales</li>
-            <li><strong>Cuentas bancarias:</strong> Nombre personalizado, balance, tipo de cuenta</li>
-            <li><strong>Presupuestos:</strong> Metas financieras, límites de gasto</li>
-            <li><strong>Metas de ahorro:</strong> Objetivos y progreso</li>
-        </ul>
-        <p class="highlight">
-            <strong>Importante:</strong> Nimbus NO recopila números de cuenta bancaria reales, contraseñas, tarjetas de crédito, ni conexiones directas con instituciones financieras.
-        </p>
-
-        <h3>2.2 Datos de Ubicación (Opcional)</h3>
-        <ul>
-            <li><strong>Cuándo:</strong> Solo cuando tú agregas manualmente una transacción y eliges activar la ubicación GPS</li>
-            <li><strong>Permiso requerido:</strong> Debes otorgar permiso explícito en iOS</li>
-            <li><strong>Uso:</strong> La ubicación se asocia SOLO a esa transacción específica para tu referencia personal</li>
-            <li><strong>No se usa en segundo plano:</strong> Nunca rastreamos tu ubicación cuando la app está cerrada</li>
-        </ul>
-
-        <h3>2.3 Datos de Configuración</h3>
-        <ul>
-            <li>Preferencias de idioma (español/inglés)</li>
-            <li>Moneda preferida</li>
-            <li>Tema de apariencia (claro/oscuro)</li>
-            <li>PIN de seguridad (cifrado en Keychain de iOS)</li>
-        </ul>
-
-        <h3>2.4 Datos que NO Recopilamos</h3>
-        <ul>
-            <li>❌ Información personal identificable (nombre, email, teléfono)</li>
-            <li>❌ Datos biométricos (Face ID/Touch ID se procesan localmente por iOS)</li>
-            <li>❌ Historial de navegación</li>
-            <li>❌ Contactos o fotos</li>
-            <li>❌ Números de cuenta bancaria o tarjetas de crédito reales</li>
-        </ul>
-
-        <h2>3. Cómo Usamos tus Datos</h2>
-        <p>Todos los datos se procesan <strong>localmente en tu dispositivo</strong> para:</p>
-        <ul>
-            <li>Gestionar tus finanzas personales</li>
-            <li>Generar estadísticas y gráficos de tus hábitos financieros</li>
-            <li>Configurar recordatorios de pagos programados</li>
-            <li>Exportar tus datos en formato CSV o PDF (a tu solicitud)</li>
-        </ul>
-
-        <h2>4. Almacenamiento y Seguridad</h2>
-
-        <h3>4.1 Almacenamiento Local</h3>
-        <p>
-            Nimbus utiliza <strong>Core Data</strong> de Apple para almacenar todos tus datos financieros exclusivamente en tu dispositivo iOS. Estos datos:
-        </p>
-        <ul>
-            <li>✅ Permanecen en tu dispositivo</li>
-            <li>✅ NO se sincronizan con servidores externos</li>
-            <li>✅ NO se comparten con terceros</li>
-            <li>✅ Se eliminan por completo al desinstalar la app</li>
-        </ul>
-
-        <h3>4.2 Seguridad</h3>
-        <ul>
-            <li><strong>PIN/Biometría:</strong> Tu PIN se almacena cifrado en el Keychain de iOS</li>
-            <li><strong>Face ID/Touch ID:</strong> Procesado completamente por iOS, nunca accedemos a datos biométricos</li>
-            <li><strong>Pantalla de privacidad:</strong> Ocultamos contenido sensible cuando cambias de app</li>
-        </ul>
-
-        <h2>5. Compartir con Terceros</h2>
-        <p class="highlight">
-            <strong>Nimbus NO comparte tus datos con terceros.</strong> No hay analytics, publicidad, ni SDKs de seguimiento.
-        </p>
-
-        <h3>5.1 API de Tipos de Cambio</h3>
-        <p>
-            Nimbus consulta una API pública (<code>open.er-api.com</code>) para obtener tipos de cambio actualizados. Esta consulta:
-        </p>
-        <ul>
-            <li>✅ NO incluye datos personales o financieros</li>
-            <li>✅ Solo solicita tasas de cambio públicas (como consultar el clima)</li>
-            <li>✅ No requiere identificación ni registro</li>
-        </ul>
-
-        <h2>6. Compras In-App y Suscripciones</h2>
-        <p>
-            Nimbus ofrece funcionalidades premium a través de compras in-app procesadas exclusivamente por Apple:
-        </p>
-
-        <h3>6.1 Planes disponibles</h3>
-        <ul>
-            <li><strong>Nimbus Premium Mensual:</strong> Suscripción auto-renovable mensual</li>
-            <li><strong>Nimbus Premium de por vida:</strong> Compra única sin renovación</li>
-        </ul>
-
-        <h3>6.2 Procesamiento de pagos</h3>
-        <p class="highlight">
-            <strong>Nimbus NO procesa pagos directamente.</strong> Todas las transacciones son manejadas por Apple a través de la App Store. Nosotros nunca accedemos ni almacenamos datos de tarjetas de crédito, débito, ni información de pago de ningún tipo.
-        </p>
-        <ul>
-            <li>✅ Los pagos se procesan de forma segura por Apple</li>
-            <li>✅ Tu estado premium se verifica directamente con Apple cada vez que abres la app</li>
-            <li>✅ No almacenamos información de pago en nuestros sistemas (no tenemos servidores propios)</li>
-        </ul>
-
-        <h3>6.3 Gestión de suscripción</h3>
-        <p>Puedes gestionar, pausar o cancelar tu suscripción en cualquier momento desde:</p>
-        <ul>
-            <li><strong>iOS:</strong> Ajustes → [tu nombre] → Suscripciones</li>
-            <li><strong>App Store:</strong> Tu perfil → Suscripciones</li>
-        </ul>
-        <p>
-            La cancelación surte efecto al final del período de facturación actual. Para más información sobre las políticas de reembolso, consulta los <a href="https://www.apple.com/legal/internet-services/itunes/us/terms.html" style="color: #667eea;">Términos de Servicio de Apple</a>.
-        </p>
-
-        <h3>6.4 Restaurar compras</h3>
-        <p>
-            Si cambias de dispositivo o reinstalar la app, puedes restaurar tus compras desde la opción "Restaurar compra" dentro de Nimbus. El estado premium se sincroniza automáticamente a través de tu cuenta de Apple ID.
-        </p>
-
-        <h2>7. Sincronización con iCloud</h2>
-        <p>
-            Nimbus ofrece sincronización opcional con <strong>iCloud</strong> como función premium. Si activas esta función:
-        </p>
-        <ul>
-            <li>Tus datos se sincronizan entre tus dispositivos Apple usando tu cuenta de iCloud</li>
-            <li>La sincronización es manejada por Apple — nosotros no tenemos acceso a tus datos en iCloud</li>
-            <li>Puedes desactivar la sincronización en cualquier momento desde Ajustes de la app</li>
-            <li>Al desactivar iCloud, tus datos locales se conservan en el dispositivo</li>
-        </ul>
-        <p class="highlight">
-            iCloud está sujeto a la <a href="https://www.apple.com/legal/privacy/" style="color: #667eea;">Política de Privacidad de Apple</a>.
-        </p>
-
-        <h2>8. Tus Derechos</h2>
-        <p>Como usuario de Nimbus, tienes derecho a:</p>
-        <ul>
-            <li><strong>Acceder:</strong> Todos tus datos están disponibles en la app</li>
-            <li><strong>Exportar:</strong> Puedes exportar tus datos en CSV o PDF en cualquier momento</li>
-            <li><strong>Eliminar:</strong> Puedes borrar transacciones, cuentas o toda la información desde Ajustes</li>
-            <li><strong>Revocar permisos:</strong> Puedes desactivar el acceso a ubicación en Ajustes de iOS</li>
-        </ul>
-
-        <h2>9. Retención de Datos</h2>
-        <ul>
-            <li>Tus datos permanecen en tu dispositivo <strong>hasta que los elimines manualmente</strong></li>
-            <li>Al desinstalar Nimbus, <strong>todos los datos se eliminan permanentemente</strong></li>
-            <li>No tenemos copias de respaldo externas de tu información</li>
-        </ul>
-
-        <h2>10. Privacidad de Menores</h2>
-        <p>
-            Nimbus no recopila intencionalmente información de menores de 13 años. Si eres padre/tutor y descubres que tu hijo ha proporcionado información, contáctanos para eliminarla.
-        </p>
-
-        <h2>11. Cambios a esta Política</h2>
-        <p>
-            Podemos actualizar esta Política de Privacidad ocasionalmente. Te notificaremos sobre cambios significativos mediante:
-        </p>
-        <ul>
-            <li>Una notificación en la app</li>
-            <li>Actualización de la fecha "Última actualización" arriba</li>
-        </ul>
-        <p>
-            Tu uso continuado de Nimbus después de los cambios constituye tu aceptación de la política actualizada.
-        </p>
-
-        <h2>12. Cumplimiento Legal</h2>
-        <p>
-            Esta política cumple con:
-        </p>
-        <ul>
-            <li><strong>Apple App Store Review Guidelines</strong> (Sección 5.1.1)</li>
-            <li><strong>GDPR</strong> (Reglamento General de Protección de Datos - UE)</li>
-            <li><strong>CCPA</strong> (California Consumer Privacy Act - USA)</li>
-            <li><strong>LFPDPPP</strong> (Ley Federal de Protección de Datos - México)</li>
-        </ul>
-
-        <div class="contact">
-            <h2>13. Contacto</h2>
-            <p>Si tienes preguntas sobre esta Política de Privacidad o sobre cómo manejamos tus datos, contáctanos:</p>
-            <p style="margin-top: 20px;">
-                <strong>Email:</strong> <a href="mailto:nimbusfinapp@gmail.com">nimbusfinapp@gmail.com</a><br>
-                <strong>Desarrollador:</strong> Diego Figueroa
+            <h2>1. Información General</h2>
+            <p>
+                Nimbus ("nosotros", "nuestro" o "la aplicación") es una aplicación de finanzas personales para iPhone y iPad desarrollada por Diego Figueroa. Esta Política de Privacidad describe qué información maneja la aplicación, dónde se guarda y qué control tienes sobre ella.
             </p>
+
+            <h2>2. Información que Maneja la App</h2>
+
+            <h3>2.1 Datos financieros</h3>
+            <p>Nimbus te permite registrar y gestionar:</p>
+            <ul>
+                <li><strong>Transacciones:</strong> monto, fecha, categoría y notas personales</li>
+                <li><strong>Cuentas:</strong> nombre que tú eliges, saldo y tipo de cuenta</li>
+                <li><strong>Presupuestos, metas de ahorro y pagos programados</strong></li>
+            </ul>
+            <p class="highlight">
+                <strong>Importante:</strong> Nimbus NO se conecta con bancos ni instituciones financieras, y no te pide números de cuenta reales, contraseñas bancarias ni datos de tarjetas.
+            </p>
+
+            <h3>2.2 Perfil (opcional)</h3>
+            <ul>
+                <li>Puedes escribir tu nombre y elegir una foto de perfil para personalizar la app</li>
+                <li>Ambos se guardan <strong>solo en tu dispositivo</strong>; no se sincronizan ni se envían a ningún lugar</li>
+                <li>La foto se elige con el selector de fotos de iOS: Nimbus solo recibe la imagen que tú seleccionas, no tu fototeca</li>
+            </ul>
+
+            <h3>2.3 Ubicación (opcional)</h3>
+            <ul>
+                <li><strong>Cuándo:</strong> solo cuando agregas una transacción y eliges añadir la ubicación</li>
+                <li><strong>Permiso:</strong> iOS te pide autorización explícita ("mientras se usa la app")</li>
+                <li><strong>Qué se guarda:</strong> el nombre y la dirección del lugar, asociados solo a esa transacción</li>
+                <li><strong>Nunca en segundo plano:</strong> no rastreamos tu ubicación cuando la app está cerrada</li>
+            </ul>
+
+            <h3>2.4 Configuración</h3>
+            <ul>
+                <li>Moneda preferida, apariencia (claro/oscuro) y preferencias de notificaciones</li>
+                <li>PIN de seguridad, guardado cifrado en el Llavero (Keychain) de iOS</li>
+                <li>El idioma de la app sigue el idioma configurado en iOS</li>
+            </ul>
+
+            <h3>2.5 Lo que NO recopilamos</h3>
+            <ul>
+                <li>❌ Email, teléfono ni cuentas de usuario (Nimbus no tiene registro)</li>
+                <li>❌ Datos biométricos (Face ID/Touch ID los procesa iOS; nunca los vemos)</li>
+                <li>❌ Contactos, historial de navegación ni tu fototeca</li>
+                <li>❌ Números reales de cuentas bancarias o tarjetas</li>
+                <li>❌ Analítica, publicidad ni SDKs de seguimiento de terceros</li>
+            </ul>
+
+            <h2>3. Cómo se Usa la Información</h2>
+            <p>Todo se procesa <strong>en tu dispositivo</strong> para:</p>
+            <ul>
+                <li>Mostrar tus saldos, estadísticas y gráficas</li>
+                <li>Mostrar tu información en los widgets (se comparte con ellos dentro del mismo dispositivo)</li>
+                <li>Enviarte notificaciones locales: recordatorios de pagos, fechas de corte y avisos de presupuesto. Las sugerencias "inteligentes" se calculan en el dispositivo</li>
+                <li>Exportar tus datos en CSV o PDF cuando tú lo pides; tú decides dónde guardar o compartir el archivo</li>
+            </ul>
+
+            <h2>4. Almacenamiento y Seguridad</h2>
+
+            <h3>4.1 En tu dispositivo</h3>
+            <p>
+                Nimbus usa <strong>Core Data</strong> de Apple para guardar tus datos en tu iPhone o iPad. Si no activas iCloud, tus datos:
+            </p>
+            <ul>
+                <li>✅ Permanecen únicamente en tu dispositivo</li>
+                <li>✅ No se envían a servidores externos ni se comparten con terceros</li>
+                <li>✅ Se eliminan por completo al desinstalar la app</li>
+            </ul>
+
+            <h3>4.2 Seguridad</h3>
+            <ul>
+                <li><strong>PIN y Face ID/Touch ID:</strong> protegen el acceso a la app; el PIN se guarda cifrado en el Llavero de iOS</li>
+                <li><strong>Pantalla de privacidad:</strong> ocultamos tu información cuando cambias de app</li>
+                <li><strong>Widgets:</strong> los montos se ocultan mientras el dispositivo está bloqueado, y puedes ocultar los saldos desde la app</li>
+            </ul>
+
+            <h2>5. Sincronización con iCloud (opcional)</h2>
+            <p>
+                La sincronización con iCloud está incluida en Nimbus Premium y, sin costo, para quienes usaban Nimbus antes de la versión 2.0. Si la activas:
+            </p>
+            <ul>
+                <li>Tus datos financieros (incluida la ubicación de las transacciones) se guardan en la <strong>base de datos privada de tu cuenta de iCloud</strong> y se sincronizan entre tus dispositivos Apple</li>
+                <li>Apple gestiona el almacenamiento: <strong>nosotros no tenemos acceso</strong> a tus datos en iCloud</li>
+                <li>Esa copia <strong>se conserva aunque desinstales la app</strong>, y puedes recuperarla con la opción "Restaurar desde iCloud" al instalar Nimbus de nuevo</li>
+                <li>Lo que borres en un dispositivo también se borra de iCloud y de tus otros dispositivos</li>
+                <li>Puedes desactivar la sincronización en cualquier momento desde los Ajustes de la app; tus datos locales se conservan</li>
+                <li>Para borrar la copia de iCloud: Ajustes de iOS → [tu nombre] → iCloud → Administrar almacenamiento → Nimbus</li>
+            </ul>
+            <p class="highlight">
+                iCloud está sujeto a la <a href="https://www.apple.com/legal/privacy/">Política de Privacidad de Apple</a>.
+            </p>
+
+            <h2>6. Servicios de Terceros</h2>
+
+            <h3>6.1 Tipos de cambio</h3>
+            <p>
+                Para mostrar tipos de cambio, Nimbus consulta la API pública de ExchangeRate-API (<code>open.er-api.com</code>). La consulta:
+            </p>
+            <ul>
+                <li>✅ Solo pide las tasas de cambio de una moneda; no incluye datos personales ni financieros</li>
+                <li>✅ No requiere registro ni identificación</li>
+                <li>ℹ️ Como cualquier conexión a internet, el proveedor puede ver la dirección IP desde la que se hace la consulta. Consulta sus condiciones en <a href="https://www.exchangerate-api.com">exchangerate-api.com</a></li>
+            </ul>
+
+            <h3>6.2 Apple</h3>
+            <p>
+                Si en Ajustes de iOS aceptaste compartir análisis con desarrolladores, Apple puede compartir con nosotros estadísticas de uso y reportes de fallos anónimos y agregados. Puedes desactivarlo en Ajustes → Privacidad y seguridad → Análisis y mejoras.
+            </p>
+
+            <h2>7. Compras In-App y Suscripciones</h2>
+
+            <h3>7.1 Planes disponibles</h3>
+            <ul>
+                <li><strong>Nimbus Premium Mensual:</strong> suscripción que se renueva automáticamente cada mes</li>
+                <li><strong>Nimbus Premium Anual:</strong> suscripción que se renueva automáticamente cada año. Puede incluir una prueba gratis para usuarios elegibles</li>
+                <li><strong>Nimbus Premium de por vida:</strong> compra única, sin renovación</li>
+            </ul>
+            <p>Los precios se muestran en la app en la moneda de tu país, según la App Store.</p>
+
+            <h3>7.2 Prueba gratis y renovación</h3>
+            <ul>
+                <li>Si inicias una prueba gratis, al terminar se cobra el plan anual automáticamente, salvo que canceles al menos 24 horas antes de que termine</li>
+                <li>Las suscripciones se renuevan al final de cada periodo, salvo que las canceles al menos 24 horas antes</li>
+                <li>El cobro se hace a tu cuenta de Apple</li>
+            </ul>
+
+            <h3>7.3 Procesamiento de pagos</h3>
+            <p class="highlight">
+                <strong>Nimbus NO procesa pagos.</strong> Todas las compras las maneja Apple a través de la App Store. Nunca vemos ni guardamos datos de tarjetas ni información de pago.
+            </p>
+            <ul>
+                <li>✅ Tu estado Premium se verifica con Apple directamente desde tu dispositivo</li>
+                <li>✅ Para reconocer a quienes usaban Nimbus antes de la versión 2.0, la app consulta a la App Store la versión con la que la descargaste por primera vez. Esa consulta ocurre entre tu dispositivo y Apple; no recibimos ningún dato</li>
+            </ul>
+
+            <h3>7.4 Gestionar o cancelar</h3>
+            <p>Puedes gestionar o cancelar tu suscripción en cualquier momento desde:</p>
+            <ul>
+                <li><strong>iOS:</strong> Ajustes → [tu nombre] → Suscripciones</li>
+                <li><strong>App Store:</strong> tu perfil → Suscripciones</li>
+            </ul>
+            <p>
+                La cancelación surte efecto al final del periodo ya pagado. Los reembolsos los gestiona Apple en <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. El uso de Nimbus se rige por el <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Acuerdo de licencia estándar de Apple (EULA)</a>.
+            </p>
+
+            <h3>7.5 Restaurar compras</h3>
+            <p>
+                Si cambias de dispositivo o reinstalas la app, usa "Restaurar compra" dentro de Nimbus. Tu compra está ligada a tu cuenta de Apple.
+            </p>
+
+            <h2>8. Tus Derechos y Control</h2>
+            <ul>
+                <li><strong>Acceder:</strong> toda tu información está visible en la app</li>
+                <li><strong>Exportar:</strong> puedes exportar tus datos en CSV o PDF (función Premium)</li>
+                <li><strong>Eliminar:</strong> puedes borrar transacciones, cuentas, presupuestos y metas desde la app. Para borrar todo, desinstala Nimbus y, si usas iCloud, borra también su copia (sección 5)</li>
+                <li><strong>Revocar permisos:</strong> puedes desactivar la ubicación y las notificaciones en Ajustes de iOS</li>
+            </ul>
+
+            <h2>9. Retención de Datos</h2>
+            <ul>
+                <li>Tus datos permanecen en tu dispositivo <strong>hasta que los borres</strong> o desinstales la app</li>
+                <li>Si usas iCloud, la copia en tu cuenta de iCloud permanece hasta que la borres</li>
+                <li>Nosotros no guardamos copias de tu información</li>
+            </ul>
+
+            <h2>10. Privacidad de Menores</h2>
+            <p>
+                Nimbus no está dirigida a menores de 13 años y no recopila información de ninguna persona. Si tienes dudas como padre, madre o tutor, escríbenos.
+            </p>
+
+            <h2>11. Cambios a esta Política</h2>
+            <p>
+                Podemos actualizar esta política cuando la app cambie. Actualizaremos la fecha de "Última actualización" y mencionaremos los cambios importantes en las notas de la versión de la App Store.
+            </p>
+
+            <h2>12. Marco Legal</h2>
+            <p>Esta política se redactó considerando:</p>
+            <ul>
+                <li>Las <strong>Directrices de revisión de la App Store</strong> de Apple (sección 5.1)</li>
+                <li>La <strong>LFPDPPP</strong> (Ley Federal de Protección de Datos Personales en Posesión de los Particulares, México)</li>
+                <li>El <strong>RGPD/GDPR</strong> (Unión Europea) y la <strong>CCPA</strong> (California, EE. UU.)</li>
+            </ul>
+
+            <div class="contact">
+                <h2>13. Contacto</h2>
+                <p>Si tienes preguntas sobre esta Política de Privacidad, escríbenos:</p>
+                <p style="margin-top: 20px;">
+                    <strong>Email:</strong> <a href="mailto:nimbusfinapp@gmail.com">nimbusfinapp@gmail.com</a><br>
+                    <strong>Desarrollador:</strong> Diego Figueroa
+                </p>
+            </div>
+
+            <div class="footer">
+                <p>© 2026 Nimbus - Finanzas Personales. Todos los derechos reservados.</p>
+                <p style="margin-top: 10px;">Desarrollado con ❤️ para ayudarte a gestionar tus finanzas de forma privada y segura.</p>
+            </div>
         </div>
 
-        <div class="footer">
-            <p>© 2026 Nimbus - Finanzas Personales. Todos los derechos reservados.</p>
-            <p style="margin-top: 10px;">Desarrollado con ❤️ para ayudarte a gestionar tus finanzas de forma privada y segura.</p>
+        <!-- ============================== ENGLISH ============================== -->
+        <div lang="en">
+            <div class="header">
+                <div class="logo">☁️</div>
+                <h1>Privacy Policy</h1>
+                <div class="subtitle">Nimbus - Personal Finance</div>
+                <div class="subtitle" style="margin-top: 5px;">Last updated: September 26, 2026</div>
+            </div>
+
+            <div class="highlight">
+                <strong>In short:</strong> Nimbus stores your financial data on your device and, only if you turn on sync, in your private iCloud account. We have no servers, we don't collect your information, and we don't share it with anyone.
+            </div>
+
+            <h2>1. General Information</h2>
+            <p>
+                Nimbus ("we", "our" or "the app") is a personal finance app for iPhone and iPad developed by Diego Figueroa. This Privacy Policy explains what information the app handles, where it is stored, and what control you have over it.
+            </p>
+
+            <h2>2. Information the App Handles</h2>
+
+            <h3>2.1 Financial data</h3>
+            <p>Nimbus lets you record and manage:</p>
+            <ul>
+                <li><strong>Transactions:</strong> amount, date, category and personal notes</li>
+                <li><strong>Accounts:</strong> a name you choose, balance and account type</li>
+                <li><strong>Budgets, savings goals and scheduled payments</strong></li>
+            </ul>
+            <p class="highlight">
+                <strong>Important:</strong> Nimbus does NOT connect to banks or financial institutions, and never asks for real account numbers, bank passwords or card details.
+            </p>
+
+            <h3>2.2 Profile (optional)</h3>
+            <ul>
+                <li>You can enter your name and choose a profile photo to personalize the app</li>
+                <li>Both are stored <strong>only on your device</strong>; they are not synced or sent anywhere</li>
+                <li>The photo is chosen with the iOS photo picker: Nimbus only receives the image you select, not your photo library</li>
+            </ul>
+
+            <h3>2.3 Location (optional)</h3>
+            <ul>
+                <li><strong>When:</strong> only when you add a transaction and choose to add its location</li>
+                <li><strong>Permission:</strong> iOS asks for your explicit permission ("while using the app")</li>
+                <li><strong>What is saved:</strong> the place name and address, attached only to that transaction</li>
+                <li><strong>Never in the background:</strong> we don't track your location when the app is closed</li>
+            </ul>
+
+            <h3>2.4 Settings</h3>
+            <ul>
+                <li>Preferred currency, appearance (light/dark) and notification preferences</li>
+                <li>Security PIN, stored encrypted in the iOS Keychain</li>
+                <li>The app language follows your iOS language</li>
+            </ul>
+
+            <h3>2.5 What we DON'T collect</h3>
+            <ul>
+                <li>❌ Email, phone number or user accounts (Nimbus has no sign-up)</li>
+                <li>❌ Biometric data (Face ID/Touch ID are handled by iOS; we never see them)</li>
+                <li>❌ Contacts, browsing history or your photo library</li>
+                <li>❌ Real bank account or card numbers</li>
+                <li>❌ Analytics, advertising or third-party tracking SDKs</li>
+            </ul>
+
+            <h2>3. How Information Is Used</h2>
+            <p>Everything is processed <strong>on your device</strong> to:</p>
+            <ul>
+                <li>Show your balances, statistics and charts</li>
+                <li>Show your information in widgets (shared with them on the same device)</li>
+                <li>Send you local notifications: payment reminders, statement dates and budget alerts. "Smart" suggestions are computed on the device</li>
+                <li>Export your data as CSV or PDF when you ask; you decide where to save or share the file</li>
+            </ul>
+
+            <h2>4. Storage and Security</h2>
+
+            <h3>4.1 On your device</h3>
+            <p>
+                Nimbus uses Apple's <strong>Core Data</strong> to store your data on your iPhone or iPad. If you don't turn on iCloud, your data:
+            </p>
+            <ul>
+                <li>✅ Stays only on your device</li>
+                <li>✅ Is not sent to external servers or shared with third parties</li>
+                <li>✅ Is completely deleted when you uninstall the app</li>
+            </ul>
+
+            <h3>4.2 Security</h3>
+            <ul>
+                <li><strong>PIN and Face ID/Touch ID:</strong> protect access to the app; the PIN is stored encrypted in the iOS Keychain</li>
+                <li><strong>Privacy screen:</strong> we hide your information when you switch apps</li>
+                <li><strong>Widgets:</strong> amounts are hidden while the device is locked, and you can hide balances from the app</li>
+            </ul>
+
+            <h2>5. iCloud Sync (optional)</h2>
+            <p>
+                iCloud sync is included with Nimbus Premium and, at no cost, for people who used Nimbus before version 2.0. If you turn it on:
+            </p>
+            <ul>
+                <li>Your financial data (including transaction locations) is stored in the <strong>private database of your iCloud account</strong> and synced across your Apple devices</li>
+                <li>Apple manages the storage: <strong>we have no access</strong> to your data in iCloud</li>
+                <li>That copy <strong>remains even if you uninstall the app</strong>, and you can recover it with "Restore from iCloud" when you install Nimbus again</li>
+                <li>Anything you delete on one device is also deleted from iCloud and your other devices</li>
+                <li>You can turn sync off at any time from the app's Settings; your local data is kept</li>
+                <li>To delete the iCloud copy: iOS Settings → [your name] → iCloud → Manage Storage → Nimbus</li>
+            </ul>
+            <p class="highlight">
+                iCloud is subject to <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.
+            </p>
+
+            <h2>6. Third-Party Services</h2>
+
+            <h3>6.1 Exchange rates</h3>
+            <p>
+                To show exchange rates, Nimbus queries ExchangeRate-API's public API (<code>open.er-api.com</code>). The request:
+            </p>
+            <ul>
+                <li>✅ Only asks for the rates of a currency; it includes no personal or financial data</li>
+                <li>✅ Requires no sign-up or identification</li>
+                <li>ℹ️ As with any internet connection, the provider can see the IP address the request comes from. See their terms at <a href="https://www.exchangerate-api.com">exchangerate-api.com</a></li>
+            </ul>
+
+            <h3>6.2 Apple</h3>
+            <p>
+                If you agreed in iOS Settings to share analytics with developers, Apple may share anonymous, aggregated usage statistics and crash reports with us. You can turn this off in Settings → Privacy &amp; Security → Analytics &amp; Improvements.
+            </p>
+
+            <h2>7. In-App Purchases and Subscriptions</h2>
+
+            <h3>7.1 Available plans</h3>
+            <ul>
+                <li><strong>Nimbus Premium Monthly:</strong> subscription that renews automatically every month</li>
+                <li><strong>Nimbus Premium Annual:</strong> subscription that renews automatically every year. May include a free trial for eligible users</li>
+                <li><strong>Nimbus Premium Lifetime:</strong> one-time purchase, no renewal</li>
+            </ul>
+            <p>Prices are shown in the app in your country's currency, as set by the App Store.</p>
+
+            <h3>7.2 Free trial and renewal</h3>
+            <ul>
+                <li>If you start a free trial, the annual plan is charged automatically when it ends, unless you cancel at least 24 hours before the trial ends</li>
+                <li>Subscriptions renew at the end of each period unless canceled at least 24 hours before</li>
+                <li>Payment is charged to your Apple Account</li>
+            </ul>
+
+            <h3>7.3 Payment processing</h3>
+            <p class="highlight">
+                <strong>Nimbus does NOT process payments.</strong> All purchases are handled by Apple through the App Store. We never see or store card details or any payment information.
+            </p>
+            <ul>
+                <li>✅ Your Premium status is verified with Apple directly from your device</li>
+                <li>✅ To recognize people who used Nimbus before version 2.0, the app asks the App Store which version you first downloaded. This happens between your device and Apple; we receive no data</li>
+            </ul>
+
+            <h3>7.4 Managing or canceling</h3>
+            <p>You can manage or cancel your subscription at any time from:</p>
+            <ul>
+                <li><strong>iOS:</strong> Settings → [your name] → Subscriptions</li>
+                <li><strong>App Store:</strong> your profile → Subscriptions</li>
+            </ul>
+            <p>
+                Cancellation takes effect at the end of the period already paid. Refunds are handled by Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. Use of Nimbus is governed by <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple's Standard License Agreement (EULA)</a>.
+            </p>
+
+            <h3>7.5 Restoring purchases</h3>
+            <p>
+                If you switch devices or reinstall the app, use "Restore Purchase" inside Nimbus. Your purchase is tied to your Apple Account.
+            </p>
+
+            <h2>8. Your Rights and Control</h2>
+            <ul>
+                <li><strong>Access:</strong> all your information is visible in the app</li>
+                <li><strong>Export:</strong> you can export your data as CSV or PDF (Premium feature)</li>
+                <li><strong>Delete:</strong> you can delete transactions, accounts, budgets and goals in the app. To delete everything, uninstall Nimbus and, if you use iCloud, also delete its copy (section 5)</li>
+                <li><strong>Revoke permissions:</strong> you can turn off location and notifications in iOS Settings</li>
+            </ul>
+
+            <h2>9. Data Retention</h2>
+            <ul>
+                <li>Your data stays on your device <strong>until you delete it</strong> or uninstall the app</li>
+                <li>If you use iCloud, the copy in your iCloud account remains until you delete it</li>
+                <li>We don't keep any copies of your information</li>
+            </ul>
+
+            <h2>10. Children's Privacy</h2>
+            <p>
+                Nimbus is not directed at children under 13 and does not collect information from anyone. If you are a parent or guardian and have questions, contact us.
+            </p>
+
+            <h2>11. Changes to this Policy</h2>
+            <p>
+                We may update this policy as the app changes. We will update the "Last updated" date and mention important changes in the App Store release notes.
+            </p>
+
+            <h2>12. Legal Framework</h2>
+            <p>This policy was written with the following in mind:</p>
+            <ul>
+                <li>Apple's <strong>App Store Review Guidelines</strong> (section 5.1)</li>
+                <li>Mexico's <strong>LFPDPPP</strong> (Federal Law on the Protection of Personal Data Held by Private Parties)</li>
+                <li>The EU <strong>GDPR</strong> and California's <strong>CCPA</strong></li>
+            </ul>
+
+            <div class="contact">
+                <h2>13. Contact</h2>
+                <p>If you have questions about this Privacy Policy, write to us:</p>
+                <p style="margin-top: 20px;">
+                    <strong>Email:</strong> <a href="mailto:nimbusfinapp@gmail.com">nimbusfinapp@gmail.com</a><br>
+                    <strong>Developer:</strong> Diego Figueroa
+                </p>
+            </div>
+
+            <div class="footer">
+                <p>© 2026 Nimbus - Personal Finance. All rights reserved.</p>
+                <p style="margin-top: 10px;">Made with ❤️ to help you manage your finances privately and securely.</p>
+            </div>
         </div>
     </div>
+
+    <script>
+        // Idioma: ?lang=en|es en la URL, si no el del navegador; español por defecto
+        (function () {
+            var titles = { es: 'Política de Privacidad - Nimbus', en: 'Privacy Policy - Nimbus' };
+
+            function setLang(lang) {
+                document.documentElement.lang = lang;
+                document.title = titles[lang];
+                document.querySelectorAll('[data-set-lang]').forEach(function (button) {
+                    button.setAttribute('aria-pressed', button.dataset.setLang === lang ? 'true' : 'false');
+                });
+            }
+
+            var param = new URLSearchParams(location.search).get('lang');
+            var browser = (navigator.language || 'es').slice(0, 2).toLowerCase();
+            setLang(param === 'en' || param === 'es' ? param : (browser === 'en' ? 'en' : 'es'));
+
+            document.querySelectorAll('[data-set-lang]').forEach(function (button) {
+                button.addEventListener('click', function () { setLang(button.dataset.setLang); });
+            });
+        })();
+    </script>
 </body>
 </html>
